@@ -29,7 +29,19 @@ double getUPLimit(CoolingType coolingType)
 BreachType classifyTemperatureBreach(
     CoolingType coolingType, double temperatureInC) {
   int lowerLimit = 0;
-  return inferBreach(temperatureInC, lowerLimit, getUPLimit(coolingType));
+  int upperLimit = 0;
+   switch(coolingType) {
+    case PASSIVE_COOLING:
+      upperLimit = 35;
+      return inferBreach(temperatureInC, lowerLimit,upperLimit);
+    case HI_ACTIVE_COOLING:
+      upperLimit = 45;
+      return inferBreach(temperatureInC, lowerLimit,upperLimit); 
+    case MED_ACTIVE_COOLING:
+      upperLimit = 40;
+      return inferBreach(temperatureInC, lowerLimit,upperLimit);
+   }
+  return inferBreach(temperatureInC, lowerLimit,upperLimit);
 }
 
 void checkAndAlert(
