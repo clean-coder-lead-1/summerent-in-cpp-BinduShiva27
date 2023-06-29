@@ -1,5 +1,6 @@
 #include "typewise-alert.h"
 #include <stdio.h>
+#include <map>
 std::map<int,int>mUPLimitMap = {
 {PASSIVE_COOLING,35},
 {HI_ACTIVE_COOLING,45},
