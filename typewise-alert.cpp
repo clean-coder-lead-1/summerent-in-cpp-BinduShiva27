@@ -10,22 +10,6 @@ BreachType inferBreach(double value, double lowerLimit, double upperLimit) {
   }
   return NORMAL;
 }
-double getUPLimit(CoolingType coolingType)
-{
-  int upperLimit = 0;
-   switch(coolingType) {
-    case PASSIVE_COOLING:
-      upperLimit = 35;
-      break;
-    case HI_ACTIVE_COOLING:
-      upperLimit = 45;
-      break;
-    case MED_ACTIVE_COOLING:
-      upperLimit = 40;
-      break;
-   }
-  return upperLimit;
-}
 BreachType classifyTemperatureBreach(
     CoolingType coolingType, double temperatureInC) {
   int lowerLimit = 0;
